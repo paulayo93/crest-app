@@ -6,12 +6,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default AppContainer = ({
     children, backgroundColor, padded = true,
-    scroll = true, isOtp = false,
+    scroll = true,
 }) => {
     const insets = useSafeAreaInsets();
 
     return (
         <View
+        
             style={{
                 flex: 1,
                 paddingTop: padded ? insets.top : 0,
@@ -28,7 +29,6 @@ export default AppContainer = ({
                         style={appContainerStyles.container}
                         showsVerticalScrollIndicator={false}
                         scrollEventThrottle={1}
-                        keyboardShouldPersistTaps={isOtp ? "handled" : undefined}
                     >
                         {children}
                     </KeyboardAwareScrollView>
