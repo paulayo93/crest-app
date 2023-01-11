@@ -7,15 +7,15 @@ const initialState = {
 };
 
 const crestReducers = createSlice({
-  name: "product",
+  name: "crest",
   initialState,
   reducers: {
-    login: (state, { payload: {isLoggedIn} }) => {
-
-        if(!isLoggedIn)
-        state.isLoggedIn = true
-      },
-  }
+    reset: () => console.log,
+    login: (state, { payload: { isLoggedIn } }) => {
+      
+      if (!isLoggedIn) state.isLoggedIn = true;
+    },
+  },
 });
 
 export const { login } = crestReducers.actions;

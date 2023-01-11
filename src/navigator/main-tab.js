@@ -1,9 +1,11 @@
 import React from 'react';
 import { COLORS, ROUTES } from './../constants';
+import {Text} from './../components'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
 
 import {Home, Assets, Account, Support, SaveUp} from './../screens/main';
+import {HomeIcon, AssetsIcon, SaveUpIcon, SupportIcon, AccountIcon} from './../../assets/icons'
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +19,7 @@ const MainTab = () => (
       tabBarActiveBackgroundColor: null,
       tabBarItemStyle: {
         marginBottom: 2,
-        marginTop: 6,
+        paddingTop: 10,
       },
     }}
   >
@@ -30,12 +32,9 @@ const MainTab = () => (
             Home
           </Text>
         ),
-        //   tabBarIcon: ({ focused }) => (
-        //     <Image
-        //       source={focused ? dashboard : dashboard2}
-        //       style={styles.icon}
-        //     />
-        //   ),
+          tabBarIcon: ({ focused }) => (
+           <HomeIcon  focused={focused}/>
+          ),
       }}
     />
 
@@ -45,41 +44,41 @@ const MainTab = () => (
       options={{
         tabBarLabel: ({ focused }) => (
           <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>
-            Trips
+            Assets
           </Text>
         ),
-        //   tabBarIcon: ({ focused }) => (
-        //     <Image source={focused ? trips : trips2} style={styles.icon} />
-        //   ),
+        tabBarIcon: ({ focused }) => (
+          <AssetsIcon  focused={focused}/>
+         ),
       }}
     />
 
-    <Tab.Screen
-      name={ROUTES.SUPPORT}
-      component={Support}
-      options={{
-        tabBarLabel: ({ focused }) => (
-          <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>
-            Profile
-          </Text>
-        ),
-        //   tabBarIcon: ({ focused }) => (
-        //     <Image source={focused ? profile2 : profile} style={styles.icon} />
-        //   ),
-      }}
-    />
     <Tab.Screen
       name={ROUTES.SAVEUP}
       component={SaveUp}
       options={{
         tabBarLabel: ({ focused }) => (
           <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>
-            Profile
+            Save Up
           </Text>
         ),
-        //   tabBarIcon: ({ focused }) => (
-        //     <Image source={focused ? profile2 : profile} style={styles.icon} />
-        //   ),
+        tabBarIcon: ({ focused }) => (
+          <SaveUpIcon  focused={focused}/>
+         ),
+      }}
+    />
+    <Tab.Screen
+      name={ROUTES.SUPPORT}
+      component={Support}
+      options={{
+        tabBarLabel: ({ focused }) => (
+          <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>
+            Support
+          </Text>
+        ),
+        tabBarIcon: ({ focused }) => (
+          <SupportIcon  focused={focused}/>
+         ),
       }}
     />
     <Tab.Screen
@@ -88,12 +87,12 @@ const MainTab = () => (
       options={{
         tabBarLabel: ({ focused }) => (
           <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>
-            Profile
+            Account
           </Text>
         ),
-        //   tabBarIcon: ({ focused }) => (
-        //     <Image source={focused ? profile2 : profile} style={styles.icon} />
-        //   ),
+        tabBarIcon: ({ focused }) => (
+          <AccountIcon  focused={focused}/>
+         ),
       }}
     />
   </Tab.Navigator>
@@ -112,7 +111,9 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Inter_400Regular',
     marginTop: 4,
-    // color: COLORS.SUB_TEXT,
+    color: '#262C55',
+    opacity: 0.5
+
   },
   activeLabelStyle: {
     fontSize: 12,
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'Inter_700Bold',
     marginTop: 4,
-    // color: COLORS.BLUE._400,
+    color: '#407BFF',
   },
   container: {
     backgroundColor: COLORS.WHITE,

@@ -1,21 +1,15 @@
+import React from "react";
+import AuthStack from "./auth-stack";
+import MainStack from "./main-tab";
 
-import React from 'react';
-import AuthStack from './auth-stack';
-import MainStack from './main-tab';
-
-
+import { useSelector } from "react-redux";
 
 function AppNavigator() {
-    // const { token, loading, } = useAuth();
 
-    return (
+  const isLoggedIn = useSelector((state) => state.crest.isLoggedIn);
+  console.log(isLoggedIn);
 
-        
-
-        // <AuthStack />
-        <MainStack/>
-
-    );
+  return <>{!isLoggedIn ? <AuthStack /> : <MainStack/>}</>;
 }
 
 export default AppNavigator;

@@ -1,4 +1,4 @@
-import { Dimensions, PixelRatio } from 'react-native';
+import { Dimensions, PixelRatio, StyleSheet } from 'react-native';
 
 const ratio = PixelRatio.get();
 
@@ -40,4 +40,46 @@ const normalize = (size) => {
     return size;
 };
 
+export const create = (
+    styles,
+    targetProperties = [
+        'fontSize',
+        'margin',
+        'marginHorizontal',
+        'marginVertical',
+        'padding',
+        'paddingVertical',
+        'paddingHorizontal',
+        'height',
+    ]
+) => {
+    const normalizedStyles = {};
+    Object.keys(styles).forEach((key) => {
+        normalizedStyles[key] = {};
+        Object.keys(styles[key]).forEach((property) => {
+            if (targetProperties.includes(property)) {
+                normalizedStyles[key][property] = normalize(styles[key][property]);
+            } else {
+                normalizedStyles[key][property] = styles[key][property];
+            }
+        });
+    });
+
+    return StyleSheet.create(normalizedStyles);
+};
+
 export default normalize;
+
+
+// To use
+
+// import { create } from '../utilities/normalize.js';
+
+// const styles = create({
+//   text: {
+//     color: '#d4895e',
+//     fontWeight: 'bold',
+//     fontSize: 40,
+//     marginHorizontal: 20,
+//   },
+// });

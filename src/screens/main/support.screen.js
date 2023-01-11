@@ -1,15 +1,16 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Text} from './../../components'
+import {Text, AppContainer} from './../../components'
 
-const Home = () => {
+
+const Support = () => {
 
 
     return (
-        <View>
-            <Text>Onboarding Screens</Text>
-        </View>
+        <AppContainer>
+            <Text>Support Screens</Text>
+        </AppContainer>
     )
 }
 
-export default Home
+export default Support

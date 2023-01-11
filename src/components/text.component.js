@@ -1,5 +1,5 @@
 import { COLORS } from './../constants';
-import normalize from './../utils/normalize';
+import {create} from './../utils/normalize';
 import React from 'react';
 import { StyleSheet, Text as RNText } from 'react-native';
 
@@ -25,7 +25,7 @@ export default Text = React.memo(props => {
     );
 });
 
-const textStyles = StyleSheet.create({
+const textStyles = create({
     black: {
         fontWeight: "900",
         fontFamily: "Merriweather_900Black"
@@ -40,7 +40,7 @@ const textStyles = StyleSheet.create({
     },
     medium: {
         fontWeight: "500",
-        fontFamily: 'Inter_500Medium,'
+        fontFamily: 'Inter_500Medium'
     },
     normal: {
         fontWeight: 'normal',
@@ -51,42 +51,43 @@ const textStyles = StyleSheet.create({
         fontFamily: 'Inter_300Light'
     },
     size10: {
-        fontSize: normalize(10)
+        fontSize: 10
     },
     size11: {
-        fontSize: normalize(11)
+        fontSize: 11
     },
     size12: {
-        fontSize: normalize(11)
+        fontSize: 11
     },
     size13: {
-        fontSize: normalize(13)
+        fontSize: 13
     },
     size16: {
-        fontSize: normalize(16)
+        fontSize: 16
     },
     size17: {
-        fontSize: normalize(17)
+        fontSize: 17
     },
     size22: {
-        fontSize: normalize(22)
+        fontSize: 22
     },
     line14: {
-        lineHeight: normalize(14)
+        lineHeight: 14
     },
     line15: {
-        lineHeight: normalize(15)
+        lineHeight: 15
     },
     line17: {
-        lineHeight: normalize(17)
+        lineHeight: 17
     },
     line20: {
-        lineHeight: normalize(20)
+        lineHeight: 30
     },
     line24: {
-        lineHeight: normalize(24)
+        lineHeight: 24
     },
     line30: {
-        lineHeight: normalize(30)
+        lineHeight: 30
     }
+    
 });
