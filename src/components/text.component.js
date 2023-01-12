@@ -25,7 +25,7 @@ export default Text = React.memo(props => {
     );
 });
 
-const textStyles = create({
+const textStyles = StyleSheet.create({
     black: {
         fontWeight: "900",
         fontFamily: "Merriweather_900Black"
@@ -57,7 +57,7 @@ const textStyles = create({
         fontSize: 11
     },
     size12: {
-        fontSize: 11
+        fontSize: 12
     },
     size13: {
         fontSize: 13
@@ -79,6 +79,9 @@ const textStyles = create({
     },
     line17: {
         lineHeight: 17
+    },
+    line19: {
+        lineHeight: 19
     },
     line20: {
         lineHeight: 30

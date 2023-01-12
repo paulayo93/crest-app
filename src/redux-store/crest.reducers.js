@@ -10,7 +10,6 @@ const crestReducers = createSlice({
   name: "crest",
   initialState,
   reducers: {
-    reset: () => console.log,
     login: (state, { payload: { isLoggedIn } }) => {
       
       if (!isLoggedIn) state.isLoggedIn = true;
