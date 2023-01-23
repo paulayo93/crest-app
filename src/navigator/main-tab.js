@@ -4,8 +4,11 @@ import {Text} from './../components'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
 
-import {Home, Assets, Account, Support, SaveUp} from './../screens/main';
+import {Assets, Account, Support} from './../screens/main';
 import {HomeIcon, AssetsIcon, SaveUpIcon, SupportIcon, AccountIcon} from './../../assets/icons'
+
+import SaveUpStack from './save-up.navigator'
+import HomeStack from './home.navigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,11 +25,11 @@ const MainTab = () => (
         paddingTop: 10,
       },
     }}
-    initialRouteName={ROUTES.SAVEUP}
+    // initialRouteName={ROUTES.SAVEUP}
   >
     <Tab.Screen
       name={ROUTES.HOME}
-      component={Home}
+      component={HomeStack}
       options={{
         tabBarLabel: ({ focused }) => (
           <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>
@@ -56,7 +59,7 @@ const MainTab = () => (
 
     <Tab.Screen
       name={ROUTES.SAVEUP}
-      component={SaveUp}
+      component={SaveUpStack}
       options={{
         tabBarLabel: ({ focused }) => (
           <Text style={focused ? styles.activeLabelStyle : styles.labelStyle}>

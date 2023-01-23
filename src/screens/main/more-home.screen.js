@@ -19,7 +19,7 @@ import greenLoveIcon from "./../../../assets/images/green-love-icon.png";
 
 
 
-const Home = ({navigation}) => {
+const MoreHome = () => {
   let is;
   return (
     <AppContainer padded={false}>
@@ -27,69 +27,28 @@ const Home = ({navigation}) => {
         <HomeHeader />
       </View>
 
-      <View style={styles.name}>
-        <Text lineHeight="line30" fontWeight="black" fontSize="size13">
-          Olumide{" "}
-        </Text>
-      </View>
 
-      <View style={{ marginTop: 22, paddingHorizontal: 22, marginBottom: 20 }}>
-        <ScrollView
+      <View style={{ flexDirection: 'row', paddingHorizontal: 24, paddingBottom: 30, marginTop: 24}}>
+      <ScrollView
           horizontal={true}
           scrollEnabled={true}
           showsHorizontalScrollIndicator={false}
         >
-          <QuickAccessCard />
-          <QuickAccessCard
-          onPress={() => navigation.navigate('SAVEUP', {screen: 'SAVEUP_DETAIL'})}
-            invert={true}
-            title="Plus Save"
-            subTitle="#200,000"
-            iconName={saveIcon}
-            iconStyles={{
-              width: 24,
-              height: 24,
-            }}
-            cardContainerStyles={{
-              backgroundColor: "#3D79EF",
-              marginHorizontal: 16,
-            }}
-          />
-          <QuickAccessCard
-            invert={true}
-            title="Plus Target"
-            subTitle="Create Account"
-            iconName={targetIcon}
-            iconStyles={{
-              width: 24,
-              height: 24,
-            }}
-            cardContainerStyles={{
-              backgroundColor: "#F1A5C2",
-              marginRight: 10,
-            }}
-          />
-        </ScrollView>
-      </View>
-      <View style={{ paddingHorizontal: 22, marginBottom: 30, width: "100%" }}>
-        <ScrollView
-          horizontal={true}
-          scrollEnabled={true}
-          showsHorizontalScrollIndicator={false}
-        >
-          <HouseTypeCard onPress={() => navigation.navigate('MORE_HOME')}/>
-          <HouseTypeCard />
-          <HouseTypeCard />
-          <HouseTypeCard />
-          <HouseTypeCard />
-          <HouseTypeCard />
-        </ScrollView>
-      </View>
-      <View style={styles.divider} />
+          <Tag title='Ipsumamus' />
+          <Tag title='Ipsum' />
+          <Tag title='Lorem ipsum' />
+          <Tag title='Ipsum' />
+          <Tag title='Lorem ipsum' />
+          <Tag title='Ipsumamus' />
+          <Tag title='Ipsum' />
+          </ScrollView>
+        </View>
+
+
 
       <View style={[styles.name, { paddingTop: 30 }]}>
         <Text lineHeight="line30" fontWeight="black" fontSize="size13">
-          Lorem Features
+        Lorem Ipsumusa dare
         </Text>
       </View>
 
@@ -167,11 +126,6 @@ const Home = ({navigation}) => {
           <DisplayCompanyCard />
         </View>
 
-        <View style={{ flexDirection: 'row', paddingHorizontal: 24, paddingBottom: 30 }}>
-          <Tag title='Ipsumamus' />
-          <Tag title='Ipsum' />
-          <Tag title='Lorem ipsum' />
-        </View>
 
       </View>
     </AppContainer>
@@ -194,4 +148,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default MoreHome;

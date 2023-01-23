@@ -1,10 +1,9 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Text from "./../text.component";
 import DisplayAmount from "../display-amount.component";
 
 import insertIcon from "./../../../assets/images/insert-icon.png";
-import normalize from "../../utils/normalize";
 
 const QuickAccess = ({
   iconStyles,
@@ -13,9 +12,11 @@ const QuickAccess = ({
   invert = false,
   title,
   subTitle,
+  onPress
 }) => {
   return (
-
+    <TouchableOpacity onPress={onPress}>
+   
     <View style={[styles.cardContainer, cardContainerStyles]}>
       <View style={{ paddingBottom: 10 }}>
         <Image
@@ -56,6 +57,7 @@ const QuickAccess = ({
         </View>
       )}
     </View>
+    </TouchableOpacity>
   );
 };
 

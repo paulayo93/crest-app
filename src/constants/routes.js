@@ -3,8 +3,10 @@ export default {
     ONBOARDING: 'ONBOARDING',
 
     HOME: 'HOME',
+    MORE_HOME: 'MORE_HOME',
     ASSETS: 'ASSETS',
     SAVEUP: 'SAVEUP',
+    SAVEUP_DETAIL: 'SAVEUP_DETAIL',
     SUPPORT: 'SUPPORT',
     ACCOUNT: 'ACCOUNT',
   };

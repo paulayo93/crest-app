@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Text from "./../text.component";
 
 import houseOne from "./../../../assets/images/house-icon-one.png";
 
-const HouseType = ({ title, iconName, iconStyles, cardContainerStyles }) => {
+const HouseType = ({ title, iconName, iconStyles, cardContainerStyles, onPress }) => {
   return (
+    <TouchableOpacity onPress={onPress}>
+
+   
     <View style={[homeStyles.cardContainer, cardContainerStyles]}>
       <View style={homeStyles.content}>
         <Image
@@ -17,6 +20,7 @@ const HouseType = ({ title, iconName, iconStyles, cardContainerStyles }) => {
         </Text>
       </View>
     </View>
+    </TouchableOpacity>
   );
 };
 

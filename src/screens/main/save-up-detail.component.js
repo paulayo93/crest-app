@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, } from "react-native";
+import { View, Image, StyleSheet, ScrollView } from "react-native";
 import {
   Text,
   AppContainer,
@@ -12,8 +12,8 @@ import {
 
 import targetIcon from './../../../assets/images/target-large-icon.png';
 
-const SaveUp = ({ navigation }) => {
-
+const SaveUpDetail = () => {
+  let is;
   return (
     <AppContainer padded={false}>
       <View>
@@ -28,22 +28,24 @@ const SaveUp = ({ navigation }) => {
         </Text>
       </View>
 
-      <View style={{ marginTop: 22, paddingLeft: 22, paddingRight: 25, marginBottom: 41 }}>
+      <View style={{ marginTop: 22, paddingHorizontal: 22, marginBottom: 41}}>
         <AccountSetupCard />
 
       </View>
-      <View style={{ paddingHorizontal: 22, marginBottom: 30, width: "100%", flexDirection: 'row', justifyContent: 'center' }}>
-        <SavingsInfoCard amount='200,000' cardContainerStyles={{ marginRight: 17 }} />
+      <View style={{ paddingHorizontal: 22, marginBottom: 30, width: "100%", flexDirection: 'row' }}>
+        <SavingsInfoCard amount='200,000' cardContainerStyles={{marginRight: 17}}/>
+
 
         <SavingsInfoCard
-          title='Lorem Target'
-          action='Create Account'
-          cardContainerStyles={{ backgroundColor: 'rgba(241, 165, 194, 0.15)' }}
-          iconName={targetIcon}
-          onPress={() => navigation.navigate('SAVEUP_DETAIL')}
+        title='Lorem Target'
+        action='Create Account'
+        cardContainerStyles={{backgroundColor: 'rgba(241, 165, 194, 0.15)'}} 
+        iconName={targetIcon}
         />
 
       </View>
+
+
 
 
     </AppContainer>
@@ -67,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SaveUp;
+export default SaveUpDetail;

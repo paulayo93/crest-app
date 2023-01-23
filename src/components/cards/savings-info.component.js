@@ -1,12 +1,15 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Text from "./../text.component";
 import DisplayAmount from "../display-amount.component";
 
 import saveIcon from "./../../../assets/images/save-large-icon.png";
 
-const SavingsInfo = ({ title, iconName, iconStyles, cardContainerStyles, amount, action }) => {
+const SavingsInfo = ({ title, iconName, iconStyles, cardContainerStyles, amount, action, onPress }) => {
     return (
+        <TouchableOpacity onPress={onPress}>
+
+       
         <View style={[homeStyles.cardContainer, cardContainerStyles]}>
             <View style={{ marginBottom: 22, paddingLeft: 19, paddingTop: 30 }}>
                 <Image
@@ -52,6 +55,7 @@ const SavingsInfo = ({ title, iconName, iconStyles, cardContainerStyles, amount,
 
             </View>
         </View>
+        </TouchableOpacity>
     );
 };
 
