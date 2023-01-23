@@ -13,6 +13,8 @@ function HomeStack() {
     screenOptions={{
         headerShown: false,
     }}
+    initialRouteName={ROUTES.HOME}
+
     >
       <Stack.Screen name={ROUTES.HOME} component={Home} />
       <Stack.Screen name={ROUTES.MORE_HOME} component={MoreHome} />

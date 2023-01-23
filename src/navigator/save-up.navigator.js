@@ -14,6 +14,8 @@ function SaveUpStack() {
 
         headerShown: false,
     }}
+    initialRouteName={ROUTES.SAVEUP}
+
     >
       <Stack.Screen name={ROUTES.SAVEUP} component={SaveUp} />
       <Stack.Screen name={ROUTES.SAVEUP_DETAIL} component={SaveUpDetail} />

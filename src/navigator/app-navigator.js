@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 function AppNavigator() {
 
   const isLoggedIn = useSelector((state) => state.crest.isLoggedIn);
-  console.log(isLoggedIn);
 
   return <>{!isLoggedIn ? <AuthStack /> : <MainStack/>}</>;
 }
