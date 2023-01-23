@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import store from "./src/redux-store/store";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { useFonts } from "expo-font";
 
 import "react-native-gesture-handler";
@@ -29,6 +29,7 @@ SplashScreen.preventAutoHideAsync();
 let persistor = persistStore(store);
 
 export default function App() {
+
   let customFonts = {
     Merriweather_900Black,
     Inter_300Light,
@@ -39,7 +40,7 @@ export default function App() {
   };
 
   const [fontsLoaded] = useFonts(customFonts);
- 
+
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -51,18 +52,21 @@ export default function App() {
     return null;
   }
 
-    return (
+  return (
+    // <View>
+    //   <Text style={{ marginTop: 50 }}>I am here</Text>
+    // </View>
 
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <NavigationContainer>
-            <SafeAreaProvider>
-              <AppNavigator />
-              <View onLayout={onLayoutRootView}/>
-            </SafeAreaProvider>
-          </NavigationContainer>
-        </PersistGate>
-      </Provider>
-    );
- 
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <SafeAreaProvider>
+            <AppNavigator />
+            <View onLayout={onLayoutRootView}/>
+          </SafeAreaProvider>
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
+  );
+
 }
