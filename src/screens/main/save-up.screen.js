@@ -4,23 +4,13 @@ import {
   Text,
   AppContainer,
   HomeHeader,
-  QuickAccessCard,
-  HouseTypeCard,
-  SaleInfoCard,
-  DisplayCompanyCard,
-  Tag
+  DisplayAmount,
+  AccountSetupCard,
+  SavingsInfoCard
 } from "./../../components";
 
-import saveIcon from "./../../../assets/images/save-icon.png";
-import targetIcon from "./../../../assets/images/target-icon.png";
-import houseOne from "./../../../assets/images/house-icon-one.png";
 
-import homeOne from "./../../../assets/images/home-image-one.png";
-import bookmarkIcon from "./../../../assets/images/bookmark-icon.png";
-
-import greenLoveIcon from "./../../../assets/images/green-love-icon.png";
-
-
+import targetIcon from './../../../assets/images/target-large-icon.png';
 
 const SaveUp = () => {
   let is;
@@ -30,24 +20,34 @@ const SaveUp = () => {
         <HomeHeader />
       </View>
 
-      <View style={styles.name}>
-        <Text lineHeight="line30" fontWeight="black" fontSize="size13">
-          Olumide{" "}
+      <View style={styles.amount}>
+        <DisplayAmount />
+
+        <Text fontWeight="black" fontSize="size13">
+          200,000
         </Text>
       </View>
 
-      <View style={{ marginTop: 22, paddingHorizontal: 22, marginBottom: 20 }}>
-      <QuickAccessCard />
-      
+      <View style={{ marginTop: 22, paddingHorizontal: 22, marginBottom: 41}}>
+        <AccountSetupCard />
+
       </View>
-      <View style={{ paddingHorizontal: 22, marginBottom: 30, width: "100%" }}>
-      <HouseTypeCard />
-       
-      </View>
-   
+      <View style={{ paddingHorizontal: 22, marginBottom: 30, width: "100%", flexDirection: 'row' }}>
+        <SavingsInfoCard amount='200,000' cardContainerStyles={{marginRight: 17}}/>
 
 
-    
+        <SavingsInfoCard
+        title='Lorem Target'
+        action='Create Account'
+        cardContainerStyles={{backgroundColor: 'rgba(241, 165, 194, 0.15)'}} 
+        iconName={targetIcon}
+        />
+
+      </View>
+
+
+
+
     </AppContainer>
   );
 };
@@ -55,9 +55,10 @@ const SaveUp = () => {
 
 
 const styles = StyleSheet.create({
-  name: {
+  amount: {
     paddingLeft: 22,
-    paddingTop: 41,
+    paddingTop: 12,
+    flexDirection: 'row'
   },
 
   divider: {

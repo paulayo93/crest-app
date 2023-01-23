@@ -4,8 +4,8 @@ import Svg, { Path } from "react-native-svg";
 export default function HashIcon(props) {
   return (
     <Svg
-      width="10"
-      height="14"
+      width={props?.width || "10"}
+      height={props?.height || "14"}
       viewBox="0 0 10 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

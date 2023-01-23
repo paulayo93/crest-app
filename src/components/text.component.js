@@ -86,6 +86,9 @@ const textStyles = StyleSheet.create({
     line20: {
         lineHeight: 30
     },
+    line22: {
+        lineHeight: 22
+    },
     line24: {
         lineHeight: 24
     },

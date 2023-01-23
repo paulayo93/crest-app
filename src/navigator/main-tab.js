@@ -22,6 +22,7 @@ const MainTab = () => (
         paddingTop: 10,
       },
     }}
+    initialRouteName={ROUTES.SAVEUP}
   >
     <Tab.Screen
       name={ROUTES.HOME}

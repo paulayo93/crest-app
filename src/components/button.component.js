@@ -4,29 +4,32 @@ import  Text from "./text.component";
 import { StyleSheet } from "react-native";
 
 
-const Button = ({ title, onPress, type='primary' }) => {
+const Button = ({ title, onPress, type='primary', containerStyles, fontColor, fontStyles }) => {
     return (
       <TouchableWithoutFeedback onPress={onPress}>
         <View
           style={[
             btnStyles[type],
             btnStyles.container,
+            containerStyles
           ]}
         >
-          <Text fontWeight='500' fontSize='size14' color={type === 'secondary' ? '#262C55' : 'white'}>{title}</Text>
+          <Text fontWeight='500' fontSize='size14' 
+          styles={{...fontStyles}}
+          color={type === 'secondary' ? '#262C55' : type === 'custom' ? fontColor  : 'white'}>{title}</Text>
         </View>
       </TouchableWithoutFeedback>
     );
   };
   
-  const btnStyles = StyleSheet.create({
+  const btnStyles = StyleSheet.create({ 
     container: {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
       width: "100%",
       borderRadius: 8,
-      height: 46
+      height: 46,
     },
     primary: {
       backgroundColor: "#262C55",
